@@ -10,7 +10,7 @@ class TreeNode:
 
 
 
-def convertTreeNodeToString(root: TreeNode) -> str:
+def convertBinaryTreeToString(root: TreeNode) -> str:
     """Encodes a tree to a single string.
     """
     ans = []
@@ -33,7 +33,7 @@ def convertTreeNodeToString(root: TreeNode) -> str:
 
 
  
-def convertStringToTreeNode(data: str) -> TreeNode:
+def convertStringToBinaryTree(data: str) -> TreeNode:
     """Decodes your encoded data to tree.
     """
     if len(data)==2:
