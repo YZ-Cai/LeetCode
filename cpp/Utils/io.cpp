@@ -43,13 +43,22 @@ vector<int> readVectorOfInt(string s) {
    
     vector<int> result;
     int i=0;
+    bool positive = true;
     while (i<s.size()) {
-        if (s[i]>='0' && s[i]<='9') {
+        if ((s[i]>='0' && s[i]<='9') || s[i]=='-') {
+            if (s[i]=='-') {
+                positive = false;
+                i++;
+            } else
+                positive = true;
             int j=1;
             while (s[i+j]>='0' && s[i+j]<='9')
                 j++;
             string numStr = s.substr(i,j);
-            result.push_back(stoi(numStr));
+            if (positive)
+                result.push_back(stoi(numStr));
+            else
+                result.push_back(-stoi(numStr));
             i += j;
             continue;
         } 
@@ -62,8 +71,10 @@ vector<int> readVectorOfInt(string s) {
 
 
 void printVectorOfInt(vector<int>& vec) {
-    if (vec.size()==0)
+    if (vec.size()==0) {
         cout<<"[]"<<endl;
+        return;
+    }
     cout<<"["<<vec[0];
     for (int i=1; i<vec.size(); i++)
         cout<<","<<vec[i];
@@ -138,7 +149,7 @@ TreeNode* convertStringToBinaryTree(string s) {
             continue;
         }
         if (s[i]=='n') {
-            data.push_back(s.substr(i,i+4));
+            data.push_back("null");
             i += 4;
             continue;
         }
