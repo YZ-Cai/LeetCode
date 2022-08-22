@@ -191,3 +191,31 @@ void printTreeNodeValue(TreeNode* node) {
     else
         cout<<(node->val)<<endl;
 }
+
+
+
+// print vector of string
+void printVectorOfString(vector<string>& ss) {
+    cout<<"[";
+    for (string& s : ss)
+        cout<<"\""<<s<<"\", ";
+    cout<<"] size="<<ss.size()<<endl;
+}
+
+
+
+void printMatrixOfString(vector<vector<string>>& matrix) {
+    if (matrix.size()==0) {
+        cout<<"[[]]"<<endl;
+        return;
+    }
+    
+    cout<<"[";
+    for (auto& row : matrix) {
+        cout<<"[\""<<row[0]<<"\"";
+        for (int i=1; i<row.size(); i++)
+            cout<<", \""<<row[i]<<"\"";
+        cout<<"]"<<endl;
+    }
+    cout<<"] (size="<<matrix.size()<<"*"<<matrix[0].size()<<")"<<endl;    
+}
