@@ -1,5 +1,7 @@
 # LeetCode Solutions with Local Running & Debuging
 
+<br/>
+
 Provide input & output interfaces for running & debuging solutions locally by simply
 
 1. Paste input string from LeetCode
@@ -7,6 +9,8 @@ Provide input & output interfaces for running & debuging solutions locally by si
 3. Use interfaces to output answer
 
 Currently support `C++` and `Python`, including my solutions for some problems. Keep updating!
+
+<br/>
 
 ## Example
 
@@ -42,12 +46,14 @@ class Solution:
 	# your codes here
 
 tree = "[4,2,6,3,1,5]"					# Input string copied from LeetCode
-TreeNode* root = convertStringToBinaryTree(tree)	# Use interface to decode input string
+root = convertStringToBinaryTree(tree)			# Use interface to decode input string
 val = 1							# Other inputs
 depth = 2		
 ans = Solution().addOneRow(root, val, depth)		# invoke your solution
 print(convertBinaryTreeToString(ans))			# Use interface to output answer
 ```
+
+<br/>
 
 ## C++ Interfaces
 
@@ -69,6 +75,8 @@ print(convertBinaryTreeToString(ans))			# Use interface to output answer
 | `printMatrixOfString`       | `vector<vector<int>>`                              | `"[["aa","ab"],["ac","bb"]]"`      |
 | `convertBinaryTreeToString` | `TreeNode*` (following the definition of LeetCode) | `"[4,2,6,3,1,5]"`                  |
 | `printTreeNodeValue`        | `TreeNode*` (following the definition of LeetCode) | `4`                                |
+
+<br/>
 
 ## Python Interfaces
 
